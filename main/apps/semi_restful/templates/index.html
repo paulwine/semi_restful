@@ -6,14 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
+    <title>Users</title>
 </head>
 <body>
     
     <h1>USERS</h1>
-    {% for user in users %}
-    <h1>{{user}}/h1>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User Since</th>
+            <th>Action</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+            <td><a href="/edit/{{user.id}}">Edit</a> / <a href="/delete/{{user.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
     <a href="/add">Add User</a>
+
 </body>
 </html>

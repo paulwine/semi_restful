@@ -4,3 +4,10 @@ h1{
 input{
     display: block;
 }
+th, td{
+    border: 1px solid black;
+    padding: 5px;
+}
+table{
+    background: linear-gradient(coral, lightcyan);
+}
