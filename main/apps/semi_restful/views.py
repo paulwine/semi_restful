@@ -19,6 +19,9 @@ def add_user(request):
         last = request.POST["last_name"]
         email = request.POST["email"]
         User.objects.create(first_name = first, last_name=last, email= email)
+        request.session["first"] = first
+        request.session["last"] = last
+        request.session["email"] = email
         return redirect("/")
     else:
         return redirect('/add')

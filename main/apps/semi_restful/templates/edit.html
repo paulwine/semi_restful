@@ -11,9 +11,9 @@
 <body>
     <form action ="/edit_user" method="post">
         {% csrf_token %}
-        First Name: <input type="text" name="first_name">
-        Last Name: <input type="text" name="last_name">
-        Email: <input type="text" name="email">
+        First Name: <input type="text" name="first_name" value="{{request.session.first}}">
+        Last Name: <input type="text" name="last_name" value="{{request.session.last}}">
+        Email: <input type="text" name="email" value="{{request.session.email}}">
         <input type="submit" value="submit">
     </form>
 </body>
